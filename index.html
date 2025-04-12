@@ -1,27 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style/style.css">
-</head>
-<body>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-
-
-
-
-
-<div id="app">{{ message }}</div>
-
-
-
-
-
-<script src="./index.js"></script>
-</body>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+      <p>x : {{x}} y : {{y}}</p>
+      <button @click="plus(x++)">plus</button>
+      <button @click="mines">mines</button>
+      <div @mousemove="getpos" class="box"></div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>

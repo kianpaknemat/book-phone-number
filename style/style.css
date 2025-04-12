@@ -1,3 +1,20 @@
-html{
-    background-color: aliceblue;
+html {
+  background-color: aliceblue;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+}
+
+p {
+  text-align: center;
+  color: red;
+  font-size: 1.3rem;
+}
+
+.box {
+  padding: 5rem;
+  background-color: darkseagreen;
 }
