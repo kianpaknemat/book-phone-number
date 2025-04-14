@@ -1,20 +1,103 @@
-html {
-  background-color: aliceblue;
+@font-face {
+  font-family: "primary-font";
+  src: url("./fonts/iran-yekan-400.eot");
+  src: url("./fonts/iran-yekan-400.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/iran-yekan-400.woff2") format("woff2"),
+    url("./fonts/iran-yekan-400.woff") format("woff"),
+    url("./fonts/iran-yekan-400.ttf") format("truetype");
+  font-weight: 400;
+}
+
+body {
+  font-family: "primary-font";
+  direction: rtl;
+  text-align: right;
+  background-image: -moz-linear-gradient(
+    30deg,
+    rgba(66, 181, 213, 0.5) 0%,
+    rgba(58, 210, 11, 0.5) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, rgba(66, 181, 213, 0.5)),
+    color-stop(100%, rgba(58, 210, 11, 0.5))
+  );
+  background: -webkit-linear-gradient(
+    30deg,
+    rgba(66, 181, 213, 0.5) 0%,
+    rgba(58, 210, 11, 0.5) 100%
+  );
+  background: -o-linear-gradient(
+    30deg,
+    rgba(66, 181, 213, 0.5) 0%,
+    rgba(58, 210, 11, 0.5) 100%
+  );
+  background: -ms-linear-gradient(
+    30deg,
+    rgba(66, 181, 213, 0.5) 0%,
+    rgba(58, 210, 11, 0.5) 100%
+  );
+  background: linear-gradient(
+    30deg,
+    rgba(66, 181, 213, 0.5) 0%,
+    rgba(58, 210, 11, 0.5) 100%
+  );
 }
 
 h1 {
-  color: black;
+  font-size: 1.2em;
   text-align: center;
-  font-size: 2rem;
 }
 
-p {
-  text-align: center;
-  color: red;
-  font-size: 1.3rem;
+.panel {
+  background: rgb(250, 250, 250);
+  padding: 1em;
+  width: 92.5%;
+  margin: auto;
+  max-width: 30em;
 }
 
-.box {
-  padding: 5rem;
-  background-color: darkseagreen;
+input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::after {
+  width: 100%;
+  height: 10px;
+  background: red;
+}
+
+.nav-list {
+  padding: 0;
+  width: 92.5%;
+  margin: auto;
+  max-width: 30em;
+}
+
+.nav-list li {
+  list-style: none;
+  display: inline-block;
+  background: rgba(256, 256, 256, 0.5);
+  padding: 0.7em;
+  margin: 0 0.1em;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.nav-list li:hover {
+  background: rgb(250, 250, 250);
+}
+
+.nav-list li.active {
+  background-color: rgb(250, 250, 250);
 }
