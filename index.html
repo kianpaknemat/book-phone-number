@@ -54,24 +54,29 @@
         </form>
       </div>
       <div class="panel" v-show="activeDisplay === 'addNewContent'">
-        <form action="#">
+        <form @submit.prevent="addContact">
           <h1>افزودن مخاطب</h1>
           <div class="row">
             <div class="col-lg-6">
               <label for="">نام و نام خانوادگی :</label>
               <input
                 type="text"
-                name="person"
-                id="name"
+                v-model="contact.name"
+                required
+                autocomplete="off"
                 placeholder="کیان پاک نعمت"
               />
             </div>
             <div class="col-lg-6">
               <label for="">شماره تماس :</label>
               <input
-                type="tel"
-                name="phone"
-                id="name"
+                type="text"
+                required
+                pattern="[0-9]{11}"
+                v-model="contact.phoneNumber"
+                autocomplete="off"
+                maxlength="11"
+                minlength="11"
                 placeholder="09120000000"
               />
             </div>
@@ -79,8 +84,8 @@
               <label for=""> ایمیل :</label>
               <input
                 type="text"
-                name="email"
-                id="name"
+                
+                v-model="contact.email"
                 placeholder="imgigilios@gmail.com"
               />
             </div>
@@ -90,7 +95,17 @@
           </div>
         </form>
       </div>
-      <div class="panel" v-show="activeDisplay === 'all'"></div>
+      <div class="panel" v-show="activeDisplay === 'all'">
+        <li class="allert-danger" v-if="contacts.length===0">مخاطبی وجود ندارد!</li>
+        <li class="contacts" v-for="(item, index) in contacts" :key="index">
+          <p>
+            <p>نام: {{item.name}}</p>
+            <p>شماره: {{item.phoneNumber}}</p>
+            <p>ایمیل: {{item.email}}</p>
+            <button class="delete" @click="deleteContact(index)">حذف</button>
+          </p>
+        </li>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>
