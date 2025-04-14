@@ -45,13 +45,21 @@
           <div>
             <input
               type="text"
-              name="search"
-              id="search"
+              v-model="searchName"
               placeholder="نام مخاطب را وارد کنید"
             />
           </div>
-          <input type="submit" value="جستوجو" />
         </form>
+        <hr>
+        <li class="allert-danger" v-if="filterByName.length===0" >مخاطبی وجود ندارد!</li>
+        <li class="contacts" v-for="(item, index) in filterByName" :key="index">
+          <p>
+            <p>نام: {{item.name}}</p>
+            <p>شماره: {{item.phoneNumber}}</p>
+            <p>ایمیل: {{item.email}}</p>
+            <button class="delete" @click="deleteContact(index)">حذف</button>
+          </p>
+        </li>
       </div>
       <div class="panel" v-show="activeDisplay === 'addNewContent'">
         <form @submit.prevent="addContact">

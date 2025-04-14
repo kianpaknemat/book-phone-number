@@ -10,6 +10,7 @@ createApp({
         phoneNumber: "", // ✅ keep key consistent
         email: "",
       },
+      searchName: "",
     };
   },
   methods: {
@@ -27,6 +28,17 @@ createApp({
     },
     deleteContact(index) {
       this.contacts.splice(index, 1);
+    },
+  },
+  computed: {
+    filterByName() {
+      if (this.searchName == "") return [];
+      else
+        return this.contacts.filter(
+          (f) =>
+            f.name.includes(this.searchName) ||
+            f.phoneNumber.includes(this.searchName)
+        );
     },
   },
 }).mount("#app");

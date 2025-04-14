@@ -120,3 +120,17 @@ input::after {
   padding: 2px 10px;
   margin: 5px;
 }
+
+.delete {
+  background-color: rgb(100, 1, 1);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: rgb(159, 6, 6);
+  transform: translateZ(6px);
+}
